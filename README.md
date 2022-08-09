@@ -42,5 +42,5 @@
 > CPU 코어 할당(index 0부터) : --cpuset-cpus</br>
 > $ docker run -d --cpuset-cpus 0-3 <이미지,컨테이너></br>
 > CPU 비중 설정(기본 1024) : --cpu-share</br>
-> $ docker run -d --cpuset-share 2048 <이미지,컨테이너></br>
+> $ docker run -d --cpu-share 2048 <이미지,컨테이너></br>
 > <h3>Block I/O 제한<h3>
