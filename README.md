@@ -23,3 +23,24 @@
 
 > <h2>컨테이너 리소스 확인</h2>
 > cAdvisor를 통해 확인 가능</br>
+> 컨테이너 리소스 확인 : docker stat</br>
+> 컨테이너 이벤트 확인 : docker event</br>
+
+> <h2>컨테이너 리소스 제한</h2>
+> <h3>MEMORY 리소스 제한</h3>
+> 최대 메모리 양 : -m,-memory</br>
+> $ dcoker run -d -m 512m <이미지,컨테이너></br>
+> 스왑 메모리 영역 설정(메모리+스왑, 생략시 메모리의 2배) : --memory-swap</br>
+> $ dcoker run -d -m 200m --memory-swap 300m <이미지,컨테이너></br>
+> 소프트 제한 값 설정 : --memory-reservation</br>
+> $ dcoker run -d -m 1g --memory-reservation 500m <이미지,컨테이너></br>
+> OOM Killer 설정 : --oom-kill-disable</br>
+> $ dcoker run -d -m 200m --oom-kill-disable=true <이미지,컨테이너></br>
+> <h3>CPU 리소스 제한</h3>
+> CPU core 수 지정 : --cpus</br>
+> $ docker run -d --cpus 0.5 <이미지,컨테이너></br>
+> CPU 코어 할당(index 0부터) : --cpuset-cpus</br>
+> $ docker run -d --cpuset-cpus 0-3 <이미지,컨테이너></br>
+> CPU 비중 설정(기본 1024) : --cpu-share</br>
+> $ docker run -d --cpuset-share 2048 <이미지,컨테이너></br>
+> <h3>Block I/O 제한<h3>
