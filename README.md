@@ -44,3 +44,8 @@
 > CPU 비중 설정(기본 1024) : --cpu-share</br>
 > $ docker run -d --cpu-share 2048 <이미지,컨테이너></br>
 > <h3>Block I/O 제한<h3>
+
+> <h2>컨테이너 스토리지</h2>
+> Volume Mount : -v <host path>:<containter mount path>:<read write mode></br>
+> $ docker run -d -v /dbdata:/var/lib/mysql:ro
+> 볼륨 리스트 확인 : docker volume ls
