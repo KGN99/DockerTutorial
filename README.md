@@ -60,3 +60,18 @@
 > 네트워크 지정 : docker run -d --net <네트워크명> --ip <아이피 주소> -p <포트포워딩></br>
 > <h3>컨테이너 간 통신</h3>
 > $ docker run -d --link <컨테이너명>:<호칭명> [포트포워딩]</br>
+
+> <h3>도커 컴포즈</h3>
+> version : 컴포즈 버전 (버전에 따라 지원 문법이 다르다.)</br>
+> services : 컨테이너 옵션을 정의하는 공간</br>
+> build : 컨테이너 빌드</br>
+> image : 컴포즈를 통해 실행할 이미지 지정</br>
+> command : 컨테이너에서 실행될 명령어 지정</br>
+> port : 컨테이너가 공개하는 포트 나열</br>
+> link : 다른 컨테이너와 연계할 때 연계할 컨테이너 지정</br>
+> expose : 포트를 링크로 연계된 컨테이너에게만 공개할 포트</br>
+> volumes : 컨테이너에 볼륨을 마운트</br>
+> environment : 환경변수 지정</br>
+> restart : 컨테이너가 종료될 때 적용할 restart 정책 no(재시작 되지 않음), always(수동으로 끄기전까지 항상 재시작), on-failure(오류가 있을 시 재시작)</br>
+> depends_on : 컨테이너 간 종속성을 정의, 정의한 컨테이너가 먼저 동작되어야 한다</br>
+> <a href="https://velog.io/@gmtmoney2357/Docker-%EC%BB%B4%ED%8F%AC%EC%A6%88compose">docker-compose 명령어</a>
