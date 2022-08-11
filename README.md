@@ -47,5 +47,16 @@
 
 > <h2>컨테이너 스토리지</h2>
 > Volume Mount : -v <host path>:<containter mount path>:<read write mode></br>
-> $ docker run -d -v /dbdata:/var/lib/mysql:ro
-> 볼륨 리스트 확인 : docker volume ls
+> $ docker run -d -v /dbdata:/var/lib/mysql:ro</br>
+> 볼륨 리스트 확인 : docker volume ls</br>
+
+> <h2>컨테이너 네트워크</h2>
+> <h3>포트 포워딩</h3>
+> 컨테이너 포트를 외부로 노출시켜 외부 연결 허용</br>
+> ip tables rule을 통한 포트 노출 : -p </br><hostPost>:<containerPost></br>
+> <h3>네트워크 추가</h3>
+> $ docker network create --driver bridge --subnet <서브넷 주소> --gateway <게이트웨이 주소> <네트워크명></br>
+> $ docker network create --driver bridge --subnet 192.168.100.0/24 --gateway 192.168.100.254 mynet</br>
+> 네트워크 지정 : docker run -d --net <네트워크명> --ip <아이피 주소> -p <포트포워딩></br>
+> <h3>컨테이너 간 통신</h3>
+> $ docker run -d --link <컨테이너명>:<호칭명> [포트포워딩]</br>
